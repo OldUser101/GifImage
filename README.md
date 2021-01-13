@@ -13,21 +13,15 @@ Contains libraries to play GIFs in WinForms
         public Form1()
         {
             InitializeComponent();
-            //a) Normal way
-            //pictureBox1.Image = Image.FromFile(filePath);
-
-            //b) We control the animation
             gifImage = new GifImage(filePath);
-            gifImage.ReverseAtEnd = false; //dont reverse at end
+            gifImage.ReverseAtEnd = false;
         }
 
          private void button1_Click(object sender, EventArgs e)
         {
-            //Start the time/animation
             timer1.Enabled = true;
         }
-
-        //The event that is animating the Frames
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             pictureBox1.Image = gifImage.GetNextFrame();
@@ -44,7 +38,7 @@ Contains libraries to play GIFs in WinForms
 
         Public Sub New()
             InitializeComponent()
-            gifImage = New GifImage(filePath)
+            Dim gifImage As New GifImage(filePath)
             gifImage.ReverseAtEnd = False
         End Sub
 
